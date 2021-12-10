@@ -1,0 +1,44 @@
+{
+  "name": "knight",
+  "version": "1.0.0",
+  "description": "",
+  "main": "src/index.js",
+  "scripts": {
+    "build:dev": "env NODE_ENV=development webpack",
+    "build": "env NODE_ENV=production webpack",
+    "start": "node scripts/start.js",
+    "lint": "npx eslint src/**/*.js",
+    "prettier": "npx prettier --write .",
+    "dev": "npx webpack server",
+    "prepare": "husky install"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/TiTaNE0/KnightTour.git"
+  },
+  "keywords": [],
+  "author": "Evgeny Ogryzkov",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/TiTaNE0/KnightTour/issues"
+  },
+  "homepage": "https://github.com/TiTaNE0/KnightTour#readme",
+  "devDependencies": {
+    "@babel/core": "^7.16.0",
+    "babel-loader": "^8.2.3",
+    "css-loader": "^6.5.1",
+    "eslint": "^8.4.1",
+    "file-loader": "^6.2.0",
+    "html-webpack-plugin": "^5.5.0",
+    "prettier": "^2.5.1",
+    "sass": "^1.44.0",
+    "sass-loader": "^12.4.0",
+    "style-loader": "^3.3.1",
+    "webpack": "^5.65.0",
+    "webpack-cli": "^4.9.1",
+    "webpack-dev-server": "^4.6.0"
+  },
+  "dependencies": {
+    "@hapi/hapi": "^20.2.1"
+  }
+}

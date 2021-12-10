@@ -1,1 +1,1 @@
-#Knight Touring project for Stratasys Israel
+#Knight Touring project for StrataSys Israel
