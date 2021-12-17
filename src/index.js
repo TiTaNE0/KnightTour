@@ -60,6 +60,7 @@ img.addEventListener('load', () => {
 });
 
 function knightMove() {
+    ctx.clearRect(pX, pY, 50, 75);
     ctx.drawImage(img, pX, pY, 50, 75);
     pX += 75;
     pY += 150;
