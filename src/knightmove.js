@@ -29,40 +29,39 @@ function isValidMove(visitedArr, nextRow, nextCol) {
   ) {
     return true;
   }
-  //console.log('Cant go to ' + nextRow + ', ' + nextCol)
   return false;
 }
 
-function knightMove(visitedArr, row, col, move) {
-  if (move === 64) {
-    // particular case then knight visited all spaces
-    console.log(attempt++);
-    for (let i = 0; i < 8; i++) {
-      let rowRow = '';
-      for (let j = 0; j < 8; j++) {
-        if (visitedArr[i][j].toString().length === 2) {
-          rowRow += ' ' + visitedArr[i][j];
-        } else {
-          rowRow += '  ' + visitedArr[i][j];
+  function knightMove(visitedArr, row, col, move) {
+    if (move === 64) {
+      // particular case then knight visited all spaces
+      console.log(attempt++);
+      for (let i = 0; i < 8; i++) {
+        let rowRow = '';
+        for (let j = 0; j < 8; j++) {
+          if (visitedArr[i][j].toString().length === 2) {
+            rowRow += ' ' + visitedArr[i][j];
+          } else {
+            rowRow += '  ' + visitedArr[i][j];
+          }
+        }
+        console.log(rowRow);
+      }
+      return true;
+    } else {
+      for (let i = 0; i < firstColMove.length; i++) {
+        const nextRow = row + firstRowMove[i]; // so trying to have
+        const nextCol = col + firstColMove[i]; //  a next move
+        if (isValidMove(visitedArr, nextRow, nextCol)) {
+          // checking if it's eligible move
+          visitedArr[nextRow][nextCol] = ++move; // incrementing move and "placing" a figure on the board
+          if (knightMove(visitedArr, nextRow, nextCol, move)) {
+            return true;
+          }
+          move--;
+          visitedArr[nextRow][nextCol] = 0;
         }
       }
-      console.log(rowRow);
     }
-    return true;
-  } else {
-    for (let i = 0; i < firstColMove.length; i++) {
-      const nextRow = row + firstRowMove[i]; // so trying to have
-      const nextCol = col + firstColMove[i]; //  a next move
-      if (isValidMove(visitedArr, nextRow, nextCol)) {
-        // checking if it's eligible move
-        visitedArr[nextRow][nextCol] = ++move; // incrementing move and "placing" a figure on the board
-        if (knightMove(visitedArr, nextRow, nextCol, move)) {
-          return true;
-        }
-        move--;
-        visitedArr[nextRow][nextCol] = 0;
-      }
-    }
+    return false;
   }
-  return false;
-}
