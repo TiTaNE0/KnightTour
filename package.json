@@ -9,8 +9,7 @@
     "start": "node scripts/start.js",
     "lint": "npx eslint src/**/*.js",
     "prettier": "npx prettier --write .",
-    "dev": "npx webpack server",
-    "prepare": "husky install"
+    "dev": "npx webpack server"
   },
   "repository": {
     "type": "git",
@@ -30,8 +29,6 @@
     "eslint": "^8.4.1",
     "file-loader": "^6.2.0",
     "html-webpack-plugin": "^5.5.0",
-    "prettier": "^2.5.1",
-    "prettier-quick": "0.0.5",
     "sass": "^1.45.0",
     "sass-loader": "^12.4.0",
     "style-loader": "^3.3.1",
